@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(/static/images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 10px, 8%;
+}
+
+/* Basic styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #0f0f0fa1;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    /* Initially hidden on small screens */
+}
+
+.navbar-menu.show {
+    display: flex;
+    /* Display on small screens when toggled */
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden on large screens */
+}
+
+.logo {
+    width: 90px;
+    /* margin: 0px; */
+    cursor: pointer;
+    /* border-radius: 0vh; */
+    /* transition: transform .2s; */
+    /* margin-left: px; */
+
+}
+
+.container p {
+    font-size: medium;
+    color: #00eab3d2;
+
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    background-color: #0f0f0fa1;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.btn {
+    display: flex;
+    color: #fff;
+    background-color: rgb(2, 186, 218);
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0px 0px 100px #21dce9f0;
+}
+
+.btn:hover {
+    background-color: hsl(182, 100%, 44%);
+}
+
+.btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.down-btn {
+    display: flex;
+    color: #fff;
+    background-color: rgb(142, 218, 2);
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    size: 8px;
+    /* transform: rotate(-45deg) translateY(-70px); */
+    opacity: .8;
+    animation: float 2s infinite ease-in-out;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0px 0px 100px #e92121f0;
+}
+
+.down-btn img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.content {
+    margin-top: 10%;
+    color: #fff;
+    max-width: 620px;
+    padding: 20px;
+    margin-left: 10%;
+
+
+}
+
+.content p {
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+}
+
+.content form {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 18px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Loader */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+footer {
+    background-color: #060707a1;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,129 @@
+/* Team section styles */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.team-member {
+    text-align: center;
+    margin: 0 10px 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    border-radius: 50%; /* Rounded corners */
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #297fb904;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card h3,
+.flip-card p {
+    margin: 0;
+    padding: 10px;
+}
+
+/* Content styles */
+.content {
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.content h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* Hidden content styles */
+#learn-more-content {
+    display: none;
+}
+
+#learn-more-btn{
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: .375em 1.125em;
+    font-size: 15px;
+    background-color: #0057b35f;
+    position: absolute;
+}
+
+/* Learn More button hover style */
+#learn-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background-color: #060707a1; 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center;
+    position: fixed; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Round images */
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}

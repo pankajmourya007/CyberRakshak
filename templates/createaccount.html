@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRakshak</title>
+    <link rel="stylesheet" href="/static/loginstyle.css">
+    <script type="module" src="signup.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-toggle" id="navebarToggle">&#9776;</span>
+                <img src="/static/images/logo.png" class="logo">
+                <p>
+                    CyberRakshak
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('help') }}">Help</a></li>
+            </ul>
+
+            <!-- <button class="btn"><img src="images/icon.png"> Scan...</button> -->
+        </nav>
+        <div class="content">
+            <h1>Create Account</h1>
+            <form id="createAccountForm">
+                <label for="username">Username:</label>
+                <input type="email" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="submit">Create Account</button>
+            </form>
+            <p>Have an account? <a href="{{ url_for('login') }}" id="loginLink">Login Here</a></p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+            import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+            import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyDeHSA_5dUKpphxSMHPBit6SFkcWCtPT6Q",
+                authDomain: "cyberrakshak.firebaseapp.com",
+                databaseURL: "https://cyberrakshak-default-rtdb.firebaseio.com",
+                projectId: "cyberrakshak",
+                storageBucket: "cyberrakshak.appspot.com",
+                messagingSenderId: "636838848826",
+                appId: "1:636838848826:web:ad2b4533e3b1a53f510803"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase();
+            const auth = getAuth(app);
+
+            let EmailInp = document.getElementById('email');
+            let Password = document.getElementById('password');
+            let Fname = document.getElementById('fname');
+            let Lname = document.getElementById('lname');
+            let createAccountForm = document.getElementById('createAccountForm');
+
+
+            let RegisterUser = evt => {
+                evt.preventDefault();
+
+                createUserWithEmailAndPassword(auth, username.value, password.value)
+                    .then((credentials) => {
+                        console.log(credentials);
+                        alert("Account Created successfully!");
+                        window.location.href = "{{ url_for('index') }}";
+                    })
+                    .catch((error) => {
+                        let errorMessage = "An error occurred. Please try again later.";
+                        if (error.code === 'auth/email-already-in-use') {
+                            errorMessage = "This email address is already in use.";
+                        } else if (error.code === 'auth/invalid-email') {
+                            errorMessage = "Invalid email address.";
+                        } else if (error.code === 'auth/weak-password') {
+                            errorMessage = "The password is too weak.";
+                        } // Add more conditions for other error codes if needed
+                        alert(errorMessage);
+                    });
+            }
+
+            createAccountForm.addEventListener("submit", RegisterUser);
+        </script>
+    </div>
+    <footer>
+        <p>&copy; 2024 Scan... | All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+from flask import Flask, request, render_template, jsonify, make_response
+import socket
+from urllib.parse import urlparse
+import urllib.parse as urlparse
+import re
+from bs4 import BeautifulSoup
+import requests
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('run_script.html')
+
+@app.route('/createaccount')
+def create_account():
+    return render_template('createaccount.html')
+
+def find_xss(content):
+    # Regular expression pattern to find common XSS payloads
+    xss_patterns = [
+        r'<script.*?>.*?</script>',
+        r'on(load|click|mouseover|focus|blur|change|submit|error|resize)=.*?',
+        r'javascript:.*?'
+    ]
+    for pattern in xss_patterns:
+        if re.search(pattern, content, re.IGNORECASE):
+            return True
+    return False
+
+# def get_subdomains_and_urls(domain):
+#     subdomains = set()
+#     urls = set()
+#     try:
+#         # Get the homepage of the website
+#         response = requests.get(f"https://{domain}")
+#         if response.status_code == 200:
+#             # Parse the HTML content
+#             soup = BeautifulSoup(response.content, "html.parser")
+#             # Find all the links on the page
+#             for link in soup.find_all("a"):
+#                 href = link.get("href")
+#                 if href:
+#                     # Extract the subdomain from the link
+#                     subdomain = re.search(r"^https?://([^/]+)", href)
+#                     if subdomain:
+#                         subdomains.add(subdomain.group(1))
+#                     # Add the URL to the list
+#                     urls.add(href)
+#     except requests.exceptions.RequestException as e:
+#         print(f"Error: {e}")
+#     return subdomains, urls
+
+# def get_subdomains_and_urls(domain):
+#     subdomains = set()
+#     urls = set()
+#     try:
+#         # Get the homepage of the website
+#         response = requests.get(f"https://{domain}")
+#         if response.status_code == 200:
+#             print("HTML Content:", response.text)  # Debug print
+#             # Parse the HTML content
+#             soup = BeautifulSoup(response.content, "html.parser")
+#             # Find all the links on the page
+#             for link in soup.find_all("a"):
+#                 href = ""  # Initialize href with a default value
+#                 href = link.get("href")
+#                 if href:
+#                     # Check if the URL is relative or absolute
+#                     if urlparse(href).netloc:
+#                         url = href
+#                     else:
+#                         # Construct absolute URL using the domain
+#                         url = f"https://{domain}{href}"
+#                     print("Found URL:", url)  # Debug print
+#                     # Extract the subdomain from the link
+#                     subdomain = re.search(r"^https?://([^/]+)", url)
+#                     if subdomain:
+#                         subdomains.add(subdomain.group(1))
+#                     # Add the URL to the list
+#                     urls.add(url)
+#     except requests.exceptions.RequestException as e:
+#         print(f"Error: {e}")
+#     print("Subdomains:", subdomains)  # Debug print
+#     print("URLs:", urls)  # Debug print
+#     return subdomains, urls
+def extract_params(url):
+    parsed_url = urlparse(url)
+    params = urlparse.parse_qs(parsed_url.query)
+    return params
+
+def get_subdomains_and_urls(url):
+    subdomains = set()
+    urls = set()
+    try:
+        # Parse the URL to extract the domain
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc
+        # Extract the subdomain from the URL
+        subdomain = re.search(r"^https?://([^/]+)", url)
+        if subdomain:
+            subdomains.add(subdomain.group(1))
+        # Extract URLs from query parameters
+        query_params = urlparse.parse_qs(parsed_url.query)
+        for param_name, param_value in query_params.items():
+            if param_name == 'edn' or param_name == 'edid' or param_name == 'pid' or param_name == 'issueid':
+                urls.add(param_value[0])
+    except Exception as e:
+        print(f"Error: {str(e)}")
+    return subdomains, urls
+
+
+
+
+def get_ip_address_from_url(url):
+    try:
+        # Parse the URL to extract the domain
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc
+        # Get the IP address of the domain
+        ip_address = socket.gethostbyname(domain)
+        return ip_address
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+# @app.route('/scan', methods=['POST'])
+# def scan():
+#     url = request.form['url']
+#     ip_address = get_ip_address_from_url(url)
+#     subdomains, urls = get_subdomains_and_urls(urlparse(url).netloc)
+#     result = {'ip_address': ip_address, 'subdomains': list(subdomains), 'urls': list(urls)}
+#     text_content = jsonify(result).data.decode('utf-8')
+#     if find_xss(text_content):
+#         text_content += '\n\nXSS vulnerability detected!'
+#     parsed_url = urlparse(url)
+#     filename = parsed_url.netloc.replace('.', '_') + '.txt'
+#     response = make_response(text_content)
+#     response.headers['Content-Type'] = 'text/plain'
+#     response.headers['Content-Disposition'] = f'attachment; filename={filename}'
+#     return response
+
+def scan_url(url):
+    # Implement your scanning logic here
+    # For demonstration, let's just return a placeholder result
+    return {"url": url, "scan_result": "Placeholder scan result for URL: " + url}
+
+@app.route('/scan', methods=['POST'])
+def scan():
+    url = request.form['url']
+    ip_address = get_ip_address_from_url(url)
+    subdomains, urls = get_subdomains_and_urls(urlparse(url).netloc)
+    params = extract_params(url)
+    
+       # Scan each parameter for XSS vulnerability
+    scanned_params = {}
+    for key, values in params.items():
+        for value in values:
+            # Perform XSS scanning here (for demonstration, we'll just check for script tags)
+            if "<script>" in value:
+                scanned_params[key] = {"vulnerability": "XSS detected"}
+            else:
+                scanned_params[key] = {"vulnerability": "No XSS detected"}
+    # Scanning URLs
+    scanned_urls = [scan_url(url_to_scan) for url_to_scan in urls]
+    
+    # Scanning subdomains
+    scanned_subdomains = [scan_url(subdomain) for subdomain in subdomains]
+    
+    result = {
+        'ip_address': ip_address,
+        'subdomains': list(subdomains),
+        'urls': list(urls),
+        'scanned_urls': scanned_urls,
+        'scanned_subdomains': scanned_subdomains
+    }
+    text_content = jsonify(result).data.decode('utf-8')
+    if find_xss(text_content):
+        text_content += '\n\nXSS vulnerability detected!'
+    parsed_url = urlparse(url)
+    filename = parsed_url.netloc.replace('.', '_') + '.txt'
+    response = make_response(text_content)
+    response.headers['Content-Type'] = 'text/plain'
+    response.headers['Content-Disposition'] = f'attachment; filename={filename}'
+    return response
+
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)

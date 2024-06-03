@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/aboutstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-toggle" id="navebarToggle">&#9776;</span>
+                <img src="/static/images/logo.png" class="logo">
+                <p>
+                    CyberRakshak
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('help') }}">Help</a></li>
+            </ul>
+
+            <!-- <button class="btn"><img src="images/icon.png"> Scan...</button> -->
+        </nav>
+        <div class="team">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/static/images/team1.jpg" alt="team1">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Pankaj Mourya</h3>
+                            <p>Lead Developer</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/static/images/team2.jpg" alt="team2">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Yogendra Singh</h3>
+                            <p>Developer</p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/static/images/team3.jpg" alt="team3">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Aman Kumar Modanwal</h3>
+                            <p>Tester</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>
+                About Us
+            </h1>
+            <p>
+                Welcome to our website dedicated to web security! Here, we are a team of dedicated professionals
+                passionate about ensuring online safety and security.
+            </p>
+            <div id="learn-more-content" style="display: none;">
+                <p>
+                    Our team consists of three members:<br>
+                    Pankaj Kumar -Pankaj, our Lead Developer, brings extensive experience in crafting robust and
+                    efficient web applications. With a keen eye for detail and commitment to excellence, he spearheads
+                    our platform's development efforts, ensuring it remains cutting-edge in vulnerability detection.</p>
+                <br>
+                <p>
+                    Yogendra Singh - Developer: Yogendra is a skilled developer who brings creativity and technical
+                    expertise to our team.
+                </p>
+                <p>Aman Kumar Modanwal - Tester: Aman is our meticulous tester, dedicated to ensuring that our platform
+                    operates flawlessly and reliably.
+                </p>
+            </div>
+            <button id="learn-more-btn">Learn More</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Scan... | All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var learnMoreBtn = document.getElementById('learn-more-btn');
+            var learnMoreContent = document.getElementById('learn-more-content');
+
+            learnMoreBtn.addEventListener('click', function () {
+                if (learnMoreContent.style.display === 'none' || learnMoreContent.style.display === '') {
+                    learnMoreContent.style.display = 'block';
+                    learnMoreBtn.textContent = 'Show Less';
+                } else {
+                    learnMoreContent.style.display = 'none';
+                    learnMoreBtn.textContent = 'Learn More';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

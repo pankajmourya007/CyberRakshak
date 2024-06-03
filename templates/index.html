@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRakshak</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-toggle" id="navebarToggle">&#9776;</span>
+                <img src="/static/images/logo.png" class="logo">
+                <p>
+                    CyberRakshak
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('help') }}">Help</a></li>
+            </ul>
+
+            <!-- <button class="btn"><img src="images/icon.png"> Scan...</button> -->
+        </nav>
+        <div class="content">
+            <h1>
+                Scan...<br>Your website to get started !
+            </h1>
+            <p>
+                Real-time monitoring detects potential threats instantly.
+            </p>
+            <!-- <form id="scan-url">
+                <input type="text" id="scan-url" placeholder="Enter your website URL">
+                <button type="submit" class="btn" value="Search"><img src="/static/images/icon.png"> Scan...</button>
+            </form> -->
+            <form id="searchForm" action="/scan" method="post">
+                <input type="text" id="url" placeholder="Enter your website URL" name="url">
+                <button type="submit" class="btn" id="scanButton"><img src="/static/images/icon.png"> Scan...</button>
+            </form>
+
+            <!-- <form id="searchForm" action="/scan" method="post">
+                <input type="text" id="url" placeholder="Enter your website URL" name="url">
+                Ensure name="url" -->
+            <!-- <button type="submit" class="btn" value="Search"><img src="/static/images/icon.png"> Scan...</button>
+            </form> -->
+            <div id="scan-result"></div>
+            <!-- Add download button -->
+            <!-- <a id="downloadButton" class="down-btn" type="submit" value="Download" download="scan_result.txt" img src="/static/images/download-icon.png">Scan Result</a> -->
+            <!-- <button id="downloadButton" class="down-btn" download="scan_result.txt" style="display: none;"><img src="/static/images/download-icon.png">Download Scan Result</button> -->
+
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <p>Please wait, scanning in process...</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Scan... | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- <script>
+        document.getElementById("searchForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var url = document.getElementById("url").value;
+            showLoadingModal(); // Show loading modal when scan starts
+            fetch("/scan", {
+                method: "POST",
+                body: JSON.stringify({ url: url }), // Send data as JSON string
+                headers: {
+                    "Content-Type": "application/json", // Specify JSON content type
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    var resultDiv = document.getElementById("scan-result");
+                    if (data.download_url) {
+                        // Update download button href attribute
+                        document.getElementById("downloadButton").href = data.download_url;
+                        // Display download button
+                        document.getElementById("downloadButton").style.display = "block";
+                        resultDiv.innerText = "Scan completed successfully.";
+                    } else {
+                        resultDiv.innerText = "Error: " + data.error;
+                    }
+                    hideLoadingModal(); // Hide loading modal when scan is complete
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    hideLoadingModal(); // Hide loading modal if an error occurs
+                });
+        });
+
+        function showLoadingModal() {
+            var loadingModal = document.getElementById("loadingModal");
+            loadingModal.style.display = "block";
+        }
+
+        function hideLoadingModal() {
+            var loadingModal = document.getElementById("loadingModal");
+            loadingModal.style.display = "none";
+        }
+
+    </script> -->
+</body>
+
+</html>

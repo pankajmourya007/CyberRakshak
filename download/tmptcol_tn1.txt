@@ -1,0 +1,16 @@
+{
+  "Domain name": "tesla.com",
+  "Ip address": "104.80.228.227",
+  "Parameters": {},
+  "Scanned URLs": [],
+  "Scanned subdomains": [
+    {
+      "url": "tesla.com",
+      "scan_result": "Placeholder scan result for URL: tesla.com"
+    }
+  ],
+  "Subdomains": [
+    "tesla.com"
+  ],
+  "URLs": []
+}

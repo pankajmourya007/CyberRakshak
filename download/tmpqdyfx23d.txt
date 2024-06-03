@@ -1,0 +1,203 @@
+{
+  "Domain name": "openai.com",
+  "Ip address": "13.107.246.48",
+  "Parameters": {},
+  "Scanned URLs": [
+    {
+      "url": "https://openai.com/research/weak-to-strong-generalization",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research/weak-to-strong-generalization"
+    },
+    {
+      "url": "https://platform.openai.com/docs/introduction",
+      "scan_result": "Placeholder scan result for URL: https://platform.openai.com/docs/introduction"
+    },
+    {
+      "url": "https://chat.openai.com/auth/login",
+      "scan_result": "Placeholder scan result for URL: https://chat.openai.com/auth/login"
+    },
+    {
+      "url": "https://openai.com/about",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/about"
+    },
+    {
+      "url": "https://openai.com/research",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research"
+    },
+    {
+      "url": "https://openai.com/policies/privacy-policy",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/policies/privacy-policy"
+    },
+    {
+      "url": "https://platform.openai.com/login?launch",
+      "scan_result": "Placeholder scan result for URL: https://platform.openai.com/login?launch"
+    },
+    {
+      "url": "https://openai.com/chatgpt/enterprise",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/chatgpt/enterprise"
+    },
+    {
+      "url": "https://youtube.com/OpenAI",
+      "scan_result": "Placeholder scan result for URL: https://youtube.com/OpenAI"
+    },
+    {
+      "url": "https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation"
+    },
+    {
+      "url": "https://openai.com/research/overview",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research/overview"
+    },
+    {
+      "url": "https://openai.com/pricing",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/pricing"
+    },
+    {
+      "url": "https://openai.com/policies",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/policies"
+    },
+    {
+      "url": "https://openai.com/chatgpt",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/chatgpt"
+    },
+    {
+      "url": "https://openai.com/dall-e-3",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/dall-e-3"
+    },
+    {
+      "url": "https://openai.com/chatgpt/team",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/chatgpt/team"
+    },
+    {
+      "url": "https://openai.com/residency",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/residency"
+    },
+    {
+      "url": "https://www.linkedin.com/company/openai",
+      "scan_result": "Placeholder scan result for URL: https://www.linkedin.com/company/openai"
+    },
+    {
+      "url": "https://openai.com/sora",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/sora"
+    },
+    {
+      "url": "https://openai.com/safety",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/safety"
+    },
+    {
+      "url": "https://openai.com/brand",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/brand"
+    },
+    {
+      "url": "https://openai.com/product",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/product"
+    },
+    {
+      "url": "https://openai.com/security",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/security"
+    },
+    {
+      "url": "https://openai.com/research/video-generation-models-as-world-simulators",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research/video-generation-models-as-world-simulators"
+    },
+    {
+      "url": "https://openai.com/gpt-4",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/gpt-4"
+    },
+    {
+      "url": "https://github.com/openai",
+      "scan_result": "Placeholder scan result for URL: https://github.com/openai"
+    },
+    {
+      "url": "https://openai.com/charter",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/charter"
+    },
+    {
+      "url": "https://openai.com/chatgpt/pricing",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/chatgpt/pricing"
+    },
+    {
+      "url": "https://openai.com/blog",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/blog"
+    },
+    {
+      "url": "https://openai.com/",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/"
+    },
+    {
+      "url": "https://openai.com/customer-stories",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/customer-stories"
+    },
+    {
+      "url": "https://openai.com/careers",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/careers"
+    },
+    {
+      "url": "https://chat.openai.com",
+      "scan_result": "Placeholder scan result for URL: https://chat.openai.com"
+    },
+    {
+      "url": "https://twitter.com/OpenAI",
+      "scan_result": "Placeholder scan result for URL: https://twitter.com/OpenAI"
+    },
+    {
+      "url": "https://soundcloud.com/openai_audio",
+      "scan_result": "Placeholder scan result for URL: https://soundcloud.com/openai_audio"
+    },
+    {
+      "url": "https://openai.com/research/practices-for-governing-agentic-ai-systems",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/research/practices-for-governing-agentic-ai-systems"
+    },
+    {
+      "url": "https://openai.com/#content",
+      "scan_result": "Placeholder scan result for URL: https://openai.com/#content"
+    }
+  ],
+  "Scanned subdomains": [
+    {
+      "url": "openai.com",
+      "scan_result": "Placeholder scan result for URL: openai.com"
+    }
+  ],
+  "Subdomains": [
+    "openai.com"
+  ],
+  "URLs": [
+    "https://openai.com/research/weak-to-strong-generalization",
+    "https://platform.openai.com/docs/introduction",
+    "https://chat.openai.com/auth/login",
+    "https://openai.com/about",
+    "https://openai.com/research",
+    "https://openai.com/policies/privacy-policy",
+    "https://platform.openai.com/login?launch",
+    "https://openai.com/chatgpt/enterprise",
+    "https://youtube.com/OpenAI",
+    "https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation",
+    "https://openai.com/research/overview",
+    "https://openai.com/pricing",
+    "https://openai.com/policies",
+    "https://openai.com/chatgpt",
+    "https://openai.com/dall-e-3",
+    "https://openai.com/chatgpt/team",
+    "https://openai.com/residency",
+    "https://www.linkedin.com/company/openai",
+    "https://openai.com/sora",
+    "https://openai.com/safety",
+    "https://openai.com/brand",
+    "https://openai.com/product",
+    "https://openai.com/security",
+    "https://openai.com/research/video-generation-models-as-world-simulators",
+    "https://openai.com/gpt-4",
+    "https://github.com/openai",
+    "https://openai.com/charter",
+    "https://openai.com/chatgpt/pricing",
+    "https://openai.com/blog",
+    "https://openai.com/",
+    "https://openai.com/customer-stories",
+    "https://openai.com/careers",
+    "https://chat.openai.com",
+    "https://twitter.com/OpenAI",
+    "https://soundcloud.com/openai_audio",
+    "https://openai.com/research/practices-for-governing-agentic-ai-systems",
+    "https://openai.com/#content"
+  ]
+}

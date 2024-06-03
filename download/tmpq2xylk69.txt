@@ -1,0 +1,63 @@
+{
+  "Domain name": "www.embryohotel.com",
+  "Ip address": "163.44.198.59",
+  "Parameters": {},
+  "Scanned URLs": [
+    {
+      "url": "http://www.embryohotel.com/location.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/location.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/explore.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/explore.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/gallery.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/gallery.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/contact.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/contact.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/index.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/index.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/room-detail.php?id=1",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/room-detail.php?id=1"
+    },
+    {
+      "url": "http://www.embryohotel.com/news.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/news.php"
+    },
+    {
+      "url": "http://www.embryohotel.com/room-detail.php?id=2",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/room-detail.php?id=2"
+    },
+    {
+      "url": "http://www.embryohotel.com/room.php",
+      "scan_result": "Placeholder scan result for URL: http://www.embryohotel.com/room.php"
+    }
+  ],
+  "Scanned subdomains": [
+    {
+      "url": "www.embryohotel.com",
+      "scan_result": "Placeholder scan result for URL: www.embryohotel.com"
+    }
+  ],
+  "Subdomains": [
+    "www.embryohotel.com"
+  ],
+  "URLs": [
+    "http://www.embryohotel.com/location.php",
+    "http://www.embryohotel.com/explore.php",
+    "http://www.embryohotel.com/gallery.php",
+    "http://www.embryohotel.com/contact.php",
+    "http://www.embryohotel.com/index.php",
+    "http://www.embryohotel.com/room-detail.php?id=1",
+    "http://www.embryohotel.com/news.php",
+    "http://www.embryohotel.com/room-detail.php?id=2",
+    "http://www.embryohotel.com/room.php"
+  ]
+}

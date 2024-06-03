@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRakshak</title>
+    <link rel="stylesheet" href="/static/loginstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-toggle" id="navebarToggle">&#9776;</span>
+                <img src="/static/images/logo.png" class="logo">
+                <p>
+                    CyberRakshak
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('help') }}">Help</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="email" id="username" name="username" placeholder="E-mail Address" required />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required />
+                <button type="submit" id="login">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('create_account') }}" id="createAccountLink">Create
+                    Account</a></p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+            import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+            import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyDeHSA_5dUKpphxSMHPBit6SFkcWCtPT6Q",
+                authDomain: "cyberrakshak.firebaseapp.com",
+                databaseURL: "https://cyberrakshak-default-rtdb.firebaseio.com",
+                projectId: "cyberrakshak",
+                storageBucket: "cyberrakshak.appspot.com",
+                messagingSenderId: "636838848826",
+                appId: "1:636838848826:web:ad2b4533e3b1a53f510803"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase();
+            const auth = getAuth(app);
+            const dbref = ref(db);
+
+            let Username = document.getElementById('username');
+            let Password = document.getElementById('password');
+            let Login = document.getElementById('login');
+
+
+            let SignInUser = evt => {
+                evt.preventDefault();
+
+                signInWithEmailAndPassword(auth, username.value, Password.value)
+                    .then((credentials) => {
+                        console.log(credentials);
+                        alert("Account Login successfully!");
+                        window.location.href = "{{ url_for('index') }}";
+                    })
+
+                    .catch((error) => {
+                        // alert(error.message);
+                        alert("Wrong Credentials");
+                        // console.log(error.code);
+                        // console.log(error.message);
+                    })
+            }
+
+            loginForm.addEventListener("submit", SignInUser);
+        </script>
+        
+        <footer>
+            <p>&copy; 2024 Scan... | All Rights Reserved</p>
+        </footer>
+    </div>
+    <script type="module" src="login.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!-- HTML template -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Result</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-toggle" id="navebarToggle">&#9776;</span>
+                <img src="/static/images/logo.png" class="logo">
+                <p>
+                    CyberRakshak
+                </p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('help') }}">Help</a></li>
+            </ul>
+
+            <!-- <button class="btn"><img src="images/icon.png"> Scan...</button> -->
+        </nav>
+
+        <h1>Download Page</h1>
+        <p>Your scan result is ready to download. Click the link below to download the JSON file:</p>
+        <p><a href="{{ file_url }}" download>Download Scan Result</a></p>
+
+        <!-- Button to trigger download -->
+        <button onclick="downloadData('json')">Download as JSON</button>
+
+        <script>
+            function downloadData(content_type) {
+                const resultElement = document.getElementById("result");
+                const downloadLink = document.createElement("a");
+                if (content_type === 'html') {
+                    downloadLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(resultElement.value);
+                } else {
+                    downloadLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(JSON.stringify(JSON.parse(resultElement.value), null, 2));
+                }
+                downloadLink.download = "data.txt";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            }
+        </script>
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                display: block;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* CSS */
+            button {
+                margin: 0 auto;
+                background-color: aqua;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                margin-top: 90px;
+                /* margin: 0; */
+            }
+
+            /* CSS */
+            button {
+                --b: 3px;
+                /* border thickness */
+                --s: .45em;
+                /* size of the corner */
+                --color: #f3f3f4;
+                padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+                color: var(--color);
+                --_p: var(--s);
+                background:
+                    conic-gradient(from 90deg at var(--b) var(--b), #1b6ad8a4 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+                transition: .3s linear, color 0s, background-color 0s;
+                outline: var(--b) solid #0000;
+                outline-offset: .6em;
+                font-size: 16px;
+
+                border: 0;
+
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+            }
+
+            button:hover,
+            button:focus-visible {
+                --_p: 0px;
+                outline-color: var(--color);
+                outline-offset: .05em;
+            }
+
+            button:active {
+                background: var(--color);
+                color: #fff;
+            }
+        </style>
+</body>
+
+</html>

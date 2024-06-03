@@ -1,0 +1,21 @@
+{
+    "cSpell.words": [
+        "CURLOPT",
+        "fuzzywuzzy",
+        "gaierror",
+        "jsonify",
+        "nmap",
+        "RETURNTRANSFER",
+        "sqli",
+        "sqlmap",
+        "VERIFYHOST",
+        "VERIFYPEER",
+        "xsstrike"
+    ],
+    "python.analysis.extraPaths": [
+        "./test box/templates"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
+}
