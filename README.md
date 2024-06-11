@@ -47,7 +47,7 @@ To run this project locally, follow these steps:
 
 To start the application, run:
 ```bash
-python app.py
+python server.py
 ```
 Then open your web browser and go to `http://localhost:5000` to access the application.
 
