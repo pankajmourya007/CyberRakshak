@@ -75,6 +75,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Contact
 
 For any inquiries or feedback, please contact pankaj2k21mourya007@gmail.com.
-```
-
-Ensure you move the images to the `assets/images/` directory in your repository and rename them accordingly before using the updated README.
