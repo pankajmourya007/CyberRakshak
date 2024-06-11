@@ -1,3 +1,4 @@
+
 # CyberRakshak
 
 Welcome to the CyberRakshak project! This project is a web application designed to [describe the purpose or functionality of your project here].
@@ -17,6 +18,14 @@ CyberRakshak is designed to [describe what your app does, e.g., monitor cybersec
 - **Real-time Alerts**: Receive notifications about important events.
 - **Reports**: Generate and view detailed reports.
 - **Educational Resources**: Access tutorials and guides on cybersecurity.
+
+## Screenshots
+
+### User Interface
+![User Interface](static/images/ui_screenshot.png)
+
+### Scan Result Output
+![Scan Result Output](static/images/output_screenshot.png)
 
 ## Installation
 
@@ -66,17 +75,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Contact
 
 For any inquiries or feedback, please contact pankaj2k21mourya007@gmail.com.
+```
 
-
-### Explanation of Sections
-
-- **Access the Application**: Provides a clickable button to visit the deployed app.
-- **Project Description**: A brief overview of what the project is and its main purpose.
-- **Features**: Key features of the application.
-- **Installation**: Step-by-step instructions to set up and run the project locally.
-- **Usage**: How to run the application.
-- **Deployment**: Information about the deployed application.
-- **Contributing**: Guidelines for contributing to the project.
-- **License**: Information about the project's license.
-- **Contact**: How to get in touch with the project maintainer(s).
-
+Ensure you move the images to the `assets/images/` directory in your repository and rename them accordingly before using the updated README.
