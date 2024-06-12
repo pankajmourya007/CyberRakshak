@@ -1,7 +1,7 @@
 
 # CyberRakshak
 
-Welcome to the CyberRakshak project! This project is a web application designed to [describe the purpose or functionality of your project here].
+Welcome to the CyberRakshak project! This project is a web application designed to ....
 
 ## Access the Application
 
@@ -9,7 +9,7 @@ Welcome to the CyberRakshak project! This project is a web application designed 
 
 ## Project Description
 
-CyberRakshak is designed to [describe what your app does, e.g., monitor cybersecurity threats, provide educational resources, etc.]. It includes features like [list some key features of your application].
+CyberRakshak is designed to, e.g. monitor cybersecurity threats, provide educational resources, etc. It includes features like ....
 
 ## Features
 
