@@ -60,9 +60,6 @@ python server.py
 ```
 Then open your web browser and go to `http://localhost:5000` to access the application.
 
-## Deployment
-
-The application is deployed on PythonAnywhere and can be accessed at [https://pankajmourya007.pythonanywhere.com/](https://pankajmourya007.pythonanywhere.com/).
 
 ## Contributing
 
